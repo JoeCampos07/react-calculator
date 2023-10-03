@@ -14,13 +14,17 @@ function App() {
 
   const addInput = value => {
     setInput(input + value)
-  }
-
+  };
+  
   const result = () => {
-    setInput(evaluate(input));
-  }
+    if (input) {
+      setInput(evaluate(input));
+    }else{
+      alert("Write an operation first");
+    }
+  };
 
-
+  
   return (
     <div className='App'>
       <div className='freecodecamp-logo-container'>
