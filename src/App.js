@@ -1,9 +1,12 @@
+import React from 'react';
 import './App.css';
 import freecodecamplogo from './images/freecodecamp-logo.png'
 import Button from './components/button';
 import Screen from './components/screen';
 import ClearButton from './components/clear-button';
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
+
 
 function App() {
 
@@ -11,6 +14,10 @@ function App() {
 
   const addInput = value => {
     setInput(input + value)
+  }
+
+  const result = () => {
+    setInput(evaluate(input));
   }
 
 
@@ -43,7 +50,7 @@ function App() {
           <Button clickHandle={addInput}>*</Button>
         </div>
         <div className='row'>
-          <Button clickHandle={addInput}>=</Button>
+          <Button clickHandle={result}>=</Button>
           <Button clickHandle={addInput}>0</Button>
           <Button clickHandle={addInput}>.</Button>
           <Button clickHandle={addInput}>/</Button>
